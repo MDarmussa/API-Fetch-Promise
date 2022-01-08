@@ -34,14 +34,6 @@ function goFetch() {
 
 
 
-
-
-
-
-
-
-
-
 // fetch("https://swapi.dev/api/people/2")
 //      .then(respone => respone.json())
 //      .then(data => {
