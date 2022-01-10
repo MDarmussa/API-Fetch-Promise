@@ -1,6 +1,6 @@
 var button = document.querySelector(".button")
 var inputValue = document.querySelector(".inputValue")
-var Name = document.querySelector(".name")
+var cityName = document.querySelector(".name")
 var desc = document.querySelector(".desc")
 var temp = document.querySelector(".temp")
 var feelsLike = document.querySelector(".feelsLike")
@@ -13,15 +13,15 @@ button.addEventListener('click', function() {
 
           .then(response => response.json())
           .then(data => {
-               let nameValue = data['name'];
-               let tempValue = data['main']['temp']
+               let nameValue = data.name; //it can work with dot notation as well
+               let tempValue = data['main']['temp'];
                let descValue = data['weather'][0]['description'];
-               let feelslike = data['main']['feels_like']
-               let humidity = data['main']['humidity']
-               let windSpeed = data['wind']['speed']
+               let feelslike = data['main']['feels_like'];
+               let humidity = data['main']['humidity'];
+               let windSpeed = data.wind.speed;
 
 
-               Name.innerHTML = `City: ${nameValue}`;
+               cityName.innerHTML = `City: ${nameValue}`;
                temp.innerHTML = `Tempreture: ${tempValue}°`;
                desc.innerHTML = `Today: ${descValue}`;
                feelsLike.innerHTML = `Feels Like: ${feelslike}°`;
